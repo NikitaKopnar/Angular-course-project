@@ -1,0 +1,20 @@
+<h3>Showcase string interpolation</h3>
+<p>Server ID is  {{serverId}} and its {{getServerStatus()}}</p>
+<h3>Showcase property binding</h3>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="serverCreated()"> Add new server </button>
+<p>{{serverCreationStatus}}</p>
+<p> {{ allowNewServer }} </p> 
+<p [innerHTML]="allowNewServer"></p>
+<p [innerText]="allowNewServer"></p>
+<label>Enter Name</label>
+<input (input)="updateName($event)"/>
+<p>{{serverName}}</p>
+<p>Two way binding</p>
+<input type="text" [(ngModel)]="serverName" />
+<p>{{serverName}}</p>
+<hr>
+<label>Enter username : </label>
+<input type="text" [(ngModel)] = "username" />
+<p> {{username}} </p>
+<button [disabled]="emptyString" (click)="username = ''">reset user name</button>
+<hr>

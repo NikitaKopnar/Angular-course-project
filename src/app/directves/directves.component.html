@@ -1,0 +1,15 @@
+<p>Showcase directives in angular</p>
+<label>Enter Name : </label>
+<input type="text" [(ngModel)]="serverName" />
+<button (click)="showStatus()">Click me to see text</button>
+<p *ngIf="flag" [ngStyle]="{'background-color':'Green'}" [ngClass]="{'online-status' : flag == true}">{{ serverCreatedText }} {{serverName}}</p>
+<br><br><button (click)="toggleClick()">Toggle button</button>
+<p *ngIf="toggleButton">I am toggele button</p>
+<p *ngFor="let logDisplay of toggleLog" [ngStyle]="{'background-color': logDisplay >= 5 ? 'blue' : 'transparent'}" [ngClass]="{'white-text':logDisplay>=5}">{{logDisplay}}</p>
+<br><br>
+<button (click)="showIndexing()">Toggle Button</button>
+<p *ngIf="button1">Toggled</p>
+<p *ngFor="let toggeleDisplay of toggleLog1; let i = index" 
+    [ngClass]="{'white-text': i>=5}" 
+    [ngStyle]="{'background-color' : i>=5 ? 'blue':'transparent'}"
+>{{toggeleDisplay}}</p>
